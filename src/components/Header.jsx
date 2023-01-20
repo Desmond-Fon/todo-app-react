@@ -12,14 +12,14 @@ const Header = ({ handleThemeSwitch }) => {
         <img
           src={moon}
           alt=""
-          class="w-5 dark:hidden block"
+          className="w-5 dark:hidden block cursor-pointer"
           id="moon-icon"
           onClick={handleThemeSwitch}
         />
         <img
           src={sun}
           alt=""
-          class="w-5 hidden dark:block"
+          className="w-5 hidden dark:block cursor-pointer"
           id="sun-icon"
           onClick={handleThemeSwitch}
         />
