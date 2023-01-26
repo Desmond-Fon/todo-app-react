@@ -1,7 +1,14 @@
 import cross from "../images/icon-cross.svg";
-import check from "../images/icon-check.svg";
+import Check from "./Check";
 
-const Todo = ({ handleChange, name, handleKeyDown, todo }) => {
+const Todo = ({
+  handleChange,
+  name,
+  handleKeyDown,
+  todo,
+  toggleCheck,
+  check,
+}) => {
   return (
     <div className="px-5 lg:px-96">
       <input
@@ -23,15 +30,8 @@ const Todo = ({ handleChange, name, handleKeyDown, todo }) => {
                 <div key={Math.floor(Math.random() * 1000) + 1}>
                   <li className="flex justify-between py-4 px-5 text-xs items-center text-veryDarkGrayishBlueLT dark:text-lightGrayishBlueDM">
                     <span className="flex items-center">
-                      <span className="border p-1 rounded-full w-5 h-5 mr-2 check dark:border-gray-600">
-                        <img
-                          src={check}
-                          alt=""
-                          className="w-3 hidden tick"
-                          id="tick"
-                        />
-                      </span>
-                      <p>{item.name}</p>
+                      <Check toggleCheck={toggleCheck} check={check}/>
+                      <p>{item}</p>
                     </span>
                     <span>
                       <img src={cross} alt="" className="w-3" />

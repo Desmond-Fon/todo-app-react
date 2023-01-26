@@ -8,7 +8,8 @@ const todo = [];
 
 function App() {
   const [theme, setTheme] = useState("dark");
-  const [name, setname] = useState("");
+  const [name, setName] = useState("");
+ 
 
   useEffect(() => {
     if (theme === "dark") {
@@ -23,7 +24,7 @@ function App() {
   };
 
   const handleChange = (event) => {
-    setname(event.target.value);
+    setName(event.target.value);
   };
 
   const handleKeyDown = (event) => {
@@ -34,10 +35,11 @@ function App() {
   };
 
   const handleAdd = () => {
-    todo.push({ name, check: false });
-    setname("");
+    todo.push(name);
+    setName("");
   };
 
+  
   return (
     <div className="bg-[url('./images/bg-mobile-light.jpg')] dark:bg-[url('./images/bg-mobile-dark.jpg')] lg:bg-[url('./images/bg-desktop-light.jpg')] lg:dark:bg-[url('./images/bg-desktop-dark.jpg')] bg-no-repeat bg-contain bg-veryLightGrayLT dark:bg-veryDarkBlueDM h-screen font-josefin">
       <Header handleThemeSwitch={handleThemeSwitch} />
@@ -46,6 +48,8 @@ function App() {
         handleChange={handleChange}
         handleKeyDown={handleKeyDown}
         todo={todo}
+        // toggleCheck={toggleCheck}
+        // check={check}
       />
       <Drag />
     </div>
